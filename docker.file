@@ -1,0 +1,11 @@
+# Use official lightweight Nginx server image
+FROM nginx:alpine
+
+# Copy website files into web server directory
+COPY . /usr/share/nginx/html/
+
+# Expose default web server port
+EXPOSE 80
+
+# Start NGINX in foreground
+CMD ["nginx", "-g", "daemon off;"]
